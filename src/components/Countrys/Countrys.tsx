@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Country } from '../../types'
 import SelectedCountry from '../SelectedCountry/SelectedCountry'
-
+import './Countrys.css'
 
 const URL_COUNTRYS = 'https://restcountries.com/v2/all?fields=alpha3Code,name'
 
@@ -14,10 +14,13 @@ const Countrys = () => {
     }
     fechCountry()
   return (
-    <div className='Countrys'>
-      {countrys.map(country => (
+    <div>
+      <div className='Countrys'>
+        {countrys.map(country => (
         <SelectedCountry code={country.alpha3Code} name={country.name}/>
       ))}
+      </div>
+      <div></div>
     </div>
   )
 }
