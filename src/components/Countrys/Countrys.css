@@ -1,4 +1,12 @@
+.Basic{
+    display: flex;
+}
+
 .Countrys{
     width: 50%;
     text-align: left;
+}
+
+.NewCountry{
+    width: 50%;
 }
