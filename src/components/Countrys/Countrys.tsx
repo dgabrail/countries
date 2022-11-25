@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Country } from '../../types'
 import SelectedCountry from '../SelectedCountry/SelectedCountry'
-import './SelectedCountry.css'
+
 
 const URL_COUNTRYS = 'https://restcountries.com/v2/all?fields=alpha3Code,name'
 
