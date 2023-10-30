@@ -1,0 +1,10 @@
+.Countries {
+    display: flex;
+}
+
+.Farme  {
+    width: 40%;
+    text-align: left;
+    margin: 10px;
+    height: 500px;
+}

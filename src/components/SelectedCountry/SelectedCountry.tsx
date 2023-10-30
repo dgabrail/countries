@@ -1,22 +1,44 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Selected } from '../../types';
+import React, { useState } from 'react'
+import { SelectedCountryType } from '../../types';
+import './SelectedCountry.css';
 interface Props {
-    name: string;
-    code: string;
-    fechSelektedCountry: (code: string) => void
+  selectedCountry: SelectedCountryType;
+  borders: string[];
 }
 
-const URL_COUNTRY = 'https://restcountries.com/v2/alpha/'
 
-const SelectedCountry:React.FC<Props> = ({code , name , fechSelektedCountry}) => {
+const SelectedCountry: React.FC<Props> = ({ selectedCountry, borders }) => {
 
-    
+  if (borders.length === 0) {
+    return (
+      <div className='SelectedCountry'>
+        <h1>{selectedCountry.name}</h1>
+        <div>
+          <img style={{ height: '200px' }} src={selectedCountry.flag} alt="" />
+        </div>
+        <h2>{selectedCountry.capital}</h2>
+      </div>
+    )
+  }
+
+
   return (
-    <div>
-        <div className='SelectedCountry' onClick={() => fechSelektedCountry(code)}>{name}</div>
+    <div className='SelectedCountry'>
+      <h1>{selectedCountry.name}</h1>
+      <div>
+        <img style={{ height: '200px' }} src={selectedCountry.flag} alt="" />
+      </div>
+      <h2>{selectedCountry.capital}</h2>
+      {borders.map((border, index) => (
+        <span className='Border' key={index}>{border}</span>
+      ))}
     </div>
   )
+
 }
 
-export default SelectedCountry
+
+
+export default SelectedCountry;
+

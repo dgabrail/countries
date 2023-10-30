@@ -1,11 +1,10 @@
-export interface Country {
-    name: '';
-    alpha3Code: '';
+export interface CountryType {
+    name: string;
+    alpha3Code: string;
 }
 
-export interface Selected {
-    name: '';
-    borders: [];
-    capital: '';
-    flag: '';
+export interface SelectedCountryType {
+    name: string;
+    capital: string;
+    flag: string;
 }
